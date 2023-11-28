@@ -13,15 +13,16 @@
   flex-direction: column;
 }
 
-header {
+#hambuger {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100vw;
-  height: 10vh;
+  position: absolute;
+  top: 4vh;
+  left: 5vw;
 }
 
-.homePage {
+#container {
   width: 100vw;
   height: 80vh;
   display: flex;
