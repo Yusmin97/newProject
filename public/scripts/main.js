@@ -1,14 +1,14 @@
-import { createHeader } from "./header.js";
-import { createHomePage } from "./homePage.js";
+import { createHambuger } from "./hambuger.js";
+import { createContainer } from "./homePage.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   const mainContainer = document.getElementById('main');
 
   // Header component
-  const header = createHeader();
-  mainContainer.appendChild(header);
+  const hambuger = createHambuger();
+  mainContainer.appendChild(hambuger);
 
   // HomePage component
-  const homePage = createHomePage();
-  mainContainer.appendChild(homePage);
+  const container = createContainer();
+  mainContainer.appendChild(container);
 });
