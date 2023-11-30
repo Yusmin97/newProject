@@ -1,8 +1,8 @@
 export const createHambuger = () => {
-  const header = document.createElement('div');
-  header.setAttribute("id", "hambuger");
-  header.innerHTML = `
+  const hambuger = document.createElement('div');
+  hambuger.setAttribute("id", "hambuger");
+  hambuger.innerHTML = `
     <button class="hamburger-menu">☰</button>
   `;
-  return header;
+  return hambuger;
 };
