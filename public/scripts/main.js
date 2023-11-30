@@ -1,5 +1,5 @@
 import { createHambuger } from "./hambuger.js";
-import { createContainer } from "./homePage.js";
+import { createContainer } from "./container.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   const mainContainer = document.getElementById('main');
