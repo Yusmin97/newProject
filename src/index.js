@@ -1,12 +1,11 @@
 import { createContainer2 } from "./container-2.js";
 import { createHambuger2 } from "./hambuger-2.js";
-const createContainer = createContainer2();
-const createHambuger = createHambuger2();
 
 const root = document.getElementById('root');
 
 // 렌더링 함수
 function render(component, container) {
+  container.innerHTML = ''; // 컨테이너 비우기
   container.appendChild(component()); // 컴포넌트 렌더링
 }
 
