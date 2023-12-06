@@ -25,7 +25,7 @@ window.addEventListener('hashchange', () => {
 // hash를 통해 싱글페이지(SPA)에서 페이지 스위칭
   switch (hash) {
     case 'petInfo':
-      contentDiv.innerHTML = component('div ', { id: 'hambuger' }, [component('button ', { class: 'hamburger-menu'}, ['☰'])])
+      contentDiv.innerHTML = component('div ', { id: 'hamburger' }, [component('button ', { class: 'hamburger-menu'}, ['☰'])])
       break;
     case 'page2':
       contentDiv.innerHTML = component('div ', { style: 'background-color:cadetblue;' }, [
@@ -34,7 +34,7 @@ window.addEventListener('hashchange', () => {
       break;
     default: 
     // main div에 component를 이용하여 3개의 div태그를 삽입 여러개의 태그를 삽입 시 + 사용
-      contentDiv.innerHTML = component('div ', { id: 'hambuger' }, [component('button ', { class: 'hamburger-menu'}, ['☰'])])
+      contentDiv.innerHTML = component('div ', { id: 'hamburger' }, [component('button ', { class: 'hamburger-menu'}, ['☰'])])
       + component('div ', { id: 'container' }, [component('div ', { id: 'petCheck'}, [''])])
       + component('div ', { id: 'footer'}, [component('input ', { id:'plusBtn', type: 'button', value: '+'})]);
 
