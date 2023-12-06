@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./public/stylesheet/styles.css" />
+</head>
+<body>
+  <div id="root">
+    <div id="hamburger">
+      <button class="hamburger-menu">☰</button>
+    </div>
+    <div id="container">
+      <img src="image.png" alt="이미지">
+      <div class="input-wrapper">
+        <label for="name">반려동물 이름</label>
+        <input type="text" id="name" name="name" placeholder="이름을 입력하세요.">
+      </div>
+      <div class="input-wrapper">
+        <label for="weight">몸무게</label>
+        <input type="number" id="weight" name="weight" placeholder="몸무게를 입력하세요.">
+      </div>
+      <div class="input-wrapper">
+        <label for="gender">성별</label>
+        <input type="radio" id="male" name="gender" value="남성">
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="여성">
+        <label for="female">여성</label>
+      </div>
+      <div class="input-wrapper">
+        <label for="birthday">생일</label>
+        <input type="date" id="birthday" name="birthday">
+      </div>
+      <div class="input-wrapper">
+        <label for="neutered">중성화 유무</label>
+        <input type="checkbox" id="neutered" name="neutered">
+        <label for="neutered">중성화</label>
+      </div>
+      <div class="input-wrapper">
+        <label for="blood_type">혈액형</label>
+        <input type="text" id="blood_type" name="blood_type" placeholder="혈액형을 입력하세요.">
+      </div>
+      <input type="submit" value="저장">
+  </div>
+</body>
+</html>
