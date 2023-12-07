@@ -26,6 +26,24 @@ window.addEventListener('hashchange', () => {
   switch (hash) {
     case 'petInfo':
       contentDiv.innerHTML = component('div ', { id: 'hamburger' }, [component('button ', { class: 'hamburger-menu'}, ['☰'])])
+      +component('div ', { id: 'container' }, [
+        component('div ', { id: 'petCheck'}, [
+          component('form ', { action: 'info'}, [
+            component('div ', { class:'upload-icon'}, [
+              component('label ', { for: "file-upload", class: "custom-file-upload"}, ['+'])+
+              component('input ', { id:"file-upload", type:"file", accept:"image/*"})])+
+            component('div ', { class: "input-group" }, [
+              component('input ', {type:"text", name:"petName", id:"petName", class:"inp", placeholder:"반려동물 이름" }, [])]) +
+            component('div ', { class:"input-group" }, [
+              component('input ', { type:"text", name:"weight", id:"weight", class:"inp", placeholder:"몸무게" }, [])]) +
+            component('div ', { class:"input-groups"}, [
+              component('label ', { for:"sex", class:"petLabels" }, ['성별'])+
+              component('select ', { name:"sex", id:"sex" }, [
+                component('option', {}, ['남'])+ 
+                component('option', {}, ['여'])])])+ 
+            component('div ', { class:"input-group" }, [
+              component('input ', { type:"text", name:"species", id:"species", class:"inp", placeholder:"반려동물 종"}, [])])])])])
+      + component('div ', { id: 'footer'}, [component('input ', { id:'saveBtn', type: 'submit', value: '저 장'})]);
       break;
     case 'page2':
       contentDiv.innerHTML = component('div ', { style: 'background-color:cadetblue;' }, [
@@ -49,3 +67,4 @@ const plusBtn = document.getElementById('plusBtn');
 plusBtn.addEventListener('click', () => {
   window.location.hash = 'petInfo';
 })
+
