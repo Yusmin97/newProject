@@ -30,8 +30,10 @@ window.addEventListener('hashchange', () => {
         component('div ', { id: 'petCheck'}, [
           component('form ', { action: 'info'}, [
             component('div ', { class:'upload-icon'}, [
-              component('label ', { for: "file-upload", class: "custom-file-upload"}, ['+'])+
-              component('input ', { id:"file-upload", type:"file", accept:"image/*"})])+
+              component('label ', { for: "file-upload", class: "custom-file-upload"}, [
+                component('img ', { id:"preview", src:"#", alt:"preview", style:"display:none; width: 100%; height: 100%; border-radius: 50%;"}, [])+
+                component('span ', { id:'plus'}, ['+'])])+
+              component('input ', { id:"file-upload", type:"file", accept:"image/*", onchange:"previewImage(this)"})])+
             component('div ', { class: "input-group" }, [
               component('input ', {type:"text", name:"petName", id:"petName", class:"inp", placeholder:"반려동물 이름" }, [])]) +
             component('div ', { class:"input-group" }, [
@@ -82,3 +84,18 @@ plusBtn.addEventListener('click', () => {
   window.location.hash = 'petInfo';
 })
 
+function previewImage(input) {
+  const preview = document.getElementById('preview');
+  const plus = document.getElementById('plus');
+  const file = input.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+      plus.style.display = 'none'; // + 숨기기
+    };
+    reader.readAsDataURL(file);
+  }
+}
