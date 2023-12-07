@@ -42,7 +42,21 @@ window.addEventListener('hashchange', () => {
                 component('option', {}, ['남'])+ 
                 component('option', {}, ['여'])])])+ 
             component('div ', { class:"input-group" }, [
-              component('input ', { type:"text", name:"species", id:"species", class:"inp", placeholder:"반려동물 종"}, [])])])])])
+              component('input ', { type:"text", name:"species", id:"species", class:"inp", placeholder:"반려동물 종"}, [])])+
+            component('div ', { class:"input-group" }, [
+              component('label ', { for:"birth", class:"petLabels" }, ['생일'])+
+              component('input ', { type:"date", name:"birth", placeholder:"생일", value:"생일", id:"birth", class:"birthInp" }, [])])+
+            component('div ', { class:"input-groups" }, [
+              component('label ', { for:"neutering", class:"petLabels" }, ['중성화 유무'])+
+              component('select ', { name:"neutering", id:"neutering" }, [
+                component('option ', {}, ['o'])+
+                component('option ', {}, ['x'])])])+
+            component('div ', { class:"input-groups" }, [
+              component('label ', { for:"bloodType", class:"petLabels" }, ['혈액형'])+
+              component('select ', { name:"bloodType", id:"bloodType" }, [
+                component('option ', {}, ['A'])+
+                component('option ', {}, ['B'])+
+                component('option ', {}, ['AB'])])])])])])
       + component('div ', { id: 'footer'}, [component('input ', { id:'saveBtn', type: 'submit', value: '저 장'})]);
       break;
     case 'page2':
