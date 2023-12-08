@@ -1,9 +1,10 @@
 {
   "아름이": {
-    "name": "아름",
+    "fileUpload": "https://files.slack.com/files-tmb/T02JAN3TFEU-F0697LLE398-7a428388d4/1000000735_720.jpg",
+    "petName": "아름",
     "weight": "4.5kg",
-    "sex": "female",
-    "vreed": "코리안숏헤어",
+    "sex": "여",
+    "species": "코리안숏헤어",
     "birth": "2017.05.15",
     "neutering": "o",
     "bloodType": "A"
