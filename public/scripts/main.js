@@ -116,16 +116,25 @@ window.addEventListener('hashchange', () => {
       // 저장 버튼 클릭 시 데이터를 서버로 전송
       const saveBtn = document.getElementById('saveBtn');
       saveBtn.addEventListener('click', () => {
-        const petData = {
-          fileUpload: document.getElementById('fileUpload').value,
-          petname: document.getElementById('petName').value,
-          weight: document.getElementById('weight').value,
-          sex: document.getElementById('sex').value,
-          species: document.getElementById('species').value,
-          birth: document.getElementById('birth').value,
-          neutering: document.getElementById('neutering').value,
-          bloodType: document.getElementById('bloodType').value
-        };
+        // FormData 객체를 생성하여 form 데이터 수집
+        const formData = new FormData(document.getElementById('petForm'));
+
+        // const petData = {
+        //   fileUpload: document.getElementById('fileUpload').value,
+        //   petname: document.getElementById('petName').value,
+        //   weight: document.getElementById('weight').value,
+        //   sex: document.getElementById('sex').value,
+        //   species: document.getElementById('species').value,
+        //   birth: document.getElementById('birth').value,
+        //   neutering: document.getElementById('neutering').value,
+        //   bloodType: document.getElementById('bloodType').value,
+        // };
+
+        // FormData를 JSON 객체로 변환
+        const petData = {};
+        formData.forEach((value, key) => {
+          petData[key] = value;
+        });
 
         fetch('/info', {
           method: 'POST',
