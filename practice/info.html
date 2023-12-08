@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/stylesheet/style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="hamburger">
+        <button class="hamburger-menu">☰</button>
+      </div>
+      <div id="container">
+        <div id="petCheck">
+          <form action="info">
+            <div class="upload-icon">
+              <label for="file-upload" class="custom-file-upload">
+                <img id="preview" src="#" alt="preview" style="display:none; width: 100%; height: 100%; border-radius: 50%;" />
+                <span id="plus">+</span>
+              </label>
+              <input id="file-upload" type="file" accept="image/*" onchange="previewImage(this)" />
+            </div>
+            <div class="input-group">
+              <input type="text" name="petName" id="petName" class="inp" placeholder="반려동물 이름" /><br />
+            </div>
+
+            <div class="input-group">
+              <input type="text" name="weight" id="weight" class="inp" placeholder="몸무게" /><br />
+            </div>
+
+            <div class="input-groups">
+              <label for="sex" class="petLabels">성별</label>
+              <select name="sex" id="sex">
+                <option>남</option>
+                <option>여</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <input type="text" name="species" id="species" class="inp" placeholder="반려동물 종" /><br />
+            </div>
+
+            <div class="input-group">
+              <label for="birth" class="petLabels">생일</label>
+              <input type="date" name="birth" placeholder="생일" value="생일" id="birth" class="birthInp" /><br />
+            </div>
+
+            <div class="input-groups">
+              <label for="neutering" class="petLabels">중성화 유무</label>
+                <select name="neutering" id="neutering">
+                  <option>o</option>
+                  <option>x</option>
+                </select>
+            </div>
+
+            <div class="input-groups">
+              <label for="bloodType" class="petLabels">혈액형</label>
+                <select name="bloodType" id="bloodType">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>AB</option>
+                </select>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="footer">
+        <input type="submit" value="저 장" id="saveBtn" />
+      </div>
+    </div>
+    <script>
+      function previewImage(input) {
+        const preview = document.getElementById('preview');
+        const plus = document.getElementById('plus');
+        const file = input.files[0];
+
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+            plus.style.display = 'none'; // + 숨기기
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+  </body>
+</html>
