@@ -25,6 +25,7 @@ window.addEventListener('hashchange', () => {
 // hash를 통해 싱글페이지(SPA)에서 페이지 스위칭
   switch (hash) {
     case 'petInfo':
+      // 펫 정보를 입력하는 페이지
       contentDiv.innerHTML = component('div ', { id: 'hamburger' }, [component('button ', { class: 'hamburger-menu'}, ['☰'])])
       +component('div ', { id: 'container' }, [
         component('div ', { id: 'petCheck'}, [
