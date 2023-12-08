@@ -29,7 +29,7 @@ router.post('/info', (req, res) => {
     }
 
     const jsonData = JSON.parse(data);
-    jsonData[newData.name] = newData;
+    jsonData[newData.petName] = newData;
 
     fs.writeFile(jsonFilePath, JSON.stringify(jsonData), 'utf8', (err) => {
       if (err) {
