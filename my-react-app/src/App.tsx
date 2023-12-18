@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Hamburger from './hamburger';
-import Container from './container';
-import Footer from './footer';
+import PetCheck from './petCheck/petCheck';
+import MainPage from './mainPage/mainPage';
 
-function App() {
+const App = () => {
+  const [route, setRoute] = useState('');
+
+  useEffect(() => {
+    window.addEventListener('hashchange', () => {
+      setRoute(window.location.hash.substr(1));
+    });
+  }, []);
+
   return (
-    <div id="root">
-      <Hamburger />
-      <Container />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact={true} component={MainPage} />
+        <Route path="/petInfo" component={PetCheck} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
