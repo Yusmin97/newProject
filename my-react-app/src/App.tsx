@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import PetCheck from './petCheck/petCheck';
 import MainPage from './mainPage/mainPage';
 
-const App = () => {
-  const [route, setRoute] = useState('');
-
-  useEffect(() => {
-    window.addEventListener('hashchange', () => {
-      setRoute(window.location.hash.substr(1));
-    });
-  }, []);
-
+const App:  React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact={true} component={MainPage} />
-        <Route path="/petInfo" component={PetCheck} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/petCheck" element={<PetCheck />} />
       </Routes>
     </BrowserRouter>
   );

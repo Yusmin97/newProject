@@ -3,7 +3,7 @@ import Hamburger from "./hamburger";
 import Container from "./container";
 import Footer from "./footer";
 
-function MainPage() {
+const MainPage: React.FC = () => {
   return (
     <>
     <Hamburger />
